@@ -1,11 +1,10 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patient Dshboard</title>
+<title>Admin Dashboard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <style>
@@ -19,7 +18,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
   <div class="container-fluid" >
     <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
@@ -29,12 +27,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="PAGE"></a>
+        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="ReceptionistDashboard.jsp">Home</a>
+        <a class="nav-link mx-0 mx-md-3  fs-6" href="Test.jsp">Manage Test</a>
+        <a class="nav-link mx-0 mx-md-3 fs-6" href="Technician.jsp">Manage Technician</a>
+          <a class="nav-link mx-0 mx-md-3 fs-6" href="Doctor.jsp">Manage Doctor</a>
        
-        
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-appointment.jsp">Make Appointment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-payment.jsp">Make Payment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="TestResult.jsp">View Test Result</a>      
+        <a class="nav-link mx-0 mx-md-3 fs-6" href="Patient.jsp">Manage Patient</a>
+        <a class="nav-link mx-0 mx-md-3 fs-6" href="Payment.jsp">Manage Payment</a>
+                
       </div>
     </div>
   </div>

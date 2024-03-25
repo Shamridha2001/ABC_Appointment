@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Patient Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script>
     function displayErrorMessage(message) {
         var errorMessageDiv = document.getElementById("errorMessage");
@@ -13,64 +14,95 @@
     }
 </script>
 <style>
-    body {
-      background-image: url('img/doc img.jpg'); /* Replace 'your-image.jpg' with the path to your background image */
-      background-size: cover; /* Ensure the image covers the entire background */
-      background-position: center; /* Center the background image */
-      background-repeat: no-repeat; /* Prevent the background image from repeating */
-      height: 100vh; /* Set the height to 100% of the viewport height */
+    .login-container {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        margin-top: 100px;
     }
-  </style>
+   
+    body {
+        background-image: url('img/recep.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    body {
+        background-image: url('img/doc img.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .navbar-nav a {
+        font-size: 18px; /* Increase font size for navbar links */
+    }
+
+    .register-button {
+        width: 100px;
+    }
+
+    .center {
+        margin: auto;
+        display: block;
+    }
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light  " >
-  <div class="container-fluid " >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logo.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;">Logo name</p>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <img style="border-radius:80%;width: 200px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: red;"></p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-              <a class="nav-link mx-0 mx-md-3 fs-6" href="H_home.jsp">Home</a>
-       <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="H_doctor.jsp">Doctor</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="ReceptionistLogin.jsp">Receptionist</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="TechnicianLogin.jsp">Technician</a>
-        
+          <a class="nav-link mx-0 mx-md-3 fs-6" href="MainHome.jsp">Home</a>
+          
       </div>
     </div>
   </div>
 </nav>
 
-    <h2>Patient Login</h2>
-    <form action="patientLoginController" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login" onclick="return validateForm()">
-        
-        <div id="errorMessage" style="display: none; color: red;"></div>
-    </form>
-    <p><a href="Patientregister.jsp">Register</a></p>
+<div class="container">
+    <div class="col-md-6 login-container">
+        <h1 class="text-center mb-4"><b>PATIENT LOGIN</b></h1>
+        <form action="patientLoginController" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label"><b>Username</b></label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label"><b>Password</b></label>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <input type="submit" class="btn btn-primary btn-block register-button center" value="Login" onclick="return validateForm()">
+        </form>
+        <p class="text-center mt-3"><a href="Patientregister.jsp">Register</a></p>
+    </div>
+</div>
 
-    <script>
-        function validateForm() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
             
-            // You can add client-side validation if needed
-            
-            // If the username or password is empty, display an error message
-            if (username.trim() === "" || password.trim() === "") {
-                displayErrorMessage("Username and password are required.");
-                return false;
-            }
-            
-            // If no validation errors, submit the form
-            return true;
+        // If the username or password is empty, display an error message
+        if (username.trim() === "" || password.trim() === "") {
+            displayErrorMessage("Username and password are required.");
+            return false;
         }
-    </script>
+            
+        // If no validation errors, submit the form
+        return true;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

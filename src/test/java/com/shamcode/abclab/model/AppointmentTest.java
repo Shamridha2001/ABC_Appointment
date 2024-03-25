@@ -12,7 +12,7 @@ class AppointmentTest {
     void testAppointmentIntStringDateStringString() {
         Appointment appointment = new Appointment(1, "John Doe", Date.valueOf("2024-03-25"), "Blood Test", "Urgent");
         assertEquals(1, appointment.getAppointmentID());
-        assertEquals("Shamridha", appointment.getUserName());
+        assertEquals("John Doe", appointment.getUserName());
         assertEquals(Date.valueOf("2024-03-25"), appointment.getAppointmentDate());
         assertEquals("Blood Test", appointment.getTestName());
         assertEquals("Urgent", appointment.getAppointmentRequest());
@@ -21,8 +21,8 @@ class AppointmentTest {
     @Test
     void testAppointmentStringDateStringString() {
         Appointment appointment = new Appointment("Jane Doe", Date.valueOf("2024-03-26"), "X-ray", "Regular");
-        assertEquals(0, appointment.getAppointmentID()); // Updated from assertNull
-        assertEquals("Shamridha", appointment.getUserName());
+        assertEquals(0, appointment.getAppointmentID());
+        assertEquals("Jane Doe", appointment.getUserName()); // Fixed the assertion
         assertEquals(Date.valueOf("2024-03-26"), appointment.getAppointmentDate());
         assertEquals("X-ray", appointment.getTestName());
         assertEquals("Regular", appointment.getAppointmentRequest());
@@ -31,7 +31,7 @@ class AppointmentTest {
     @Test
     void testAppointment() {
         Appointment appointment = new Appointment();
-        assertEquals(0, appointment.getAppointmentID()); // Updated from assertNull
+        assertEquals(0, appointment.getAppointmentID());
         assertNull(appointment.getUserName());
         assertNull(appointment.getAppointmentDate());
         assertNull(appointment.getTestName());

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -6,24 +7,55 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <meta charset="ISO-8859-1">
     <title>Add Patient</title>
+     <style>
+        .container-bg {
+            background-color: #B0E0E6 ;
+        }
+          .navbar {
+            background-color: #B0E0E6;
+        }
+         
+        
+        
+    </style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg  " >
+  <div class="container-fluid" >
+    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: red;"></p>
+    <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
+      <div class="navbar-nav" style="#ffff">
+        <a class="nav-link mx-0 mx-md-3  fs-6 " href="MainHome.jsp">Home</a>
+        <a class="nav-link mx-0 mx-md-3 fs-6" href="Patientlogin.jsp">Login</a>
+
+                
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 <div class="container-fluid">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="Patientregister"></a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link" href="Patientlogin.jsp">Login</a>
-        </li>
-    </ul>
+  
+
     <br/>
     <br/>
-    <div class="container">
-        <h3>Register Patient</h3>
+ 	<div class="form-group p-5 mx-5 mb-4 ">
+ 	<div class=" p-5 mx-5">
+ 	<div class=" p-5 mx-5 bg-info">
+    
+    <div class="container ">
+    <div class="row">
+    	<div class="col-md-12 text-center">
+        	<h1>REGISTER PATIENT</h1>
+    	</div>
+  	</div>
         <br/>
-        <p>${message}</p>
+        
         <br/>
         <form method="post" action="patientregController">
             <br/>
@@ -70,10 +102,11 @@
             <br/>
             <br/>
             <button type="submit" class="btn btn-primary">Register</button>
-            
         </form>
     </div>
 </div>
+</div>
+</div>
+</div>
 </body>
 </html>
-

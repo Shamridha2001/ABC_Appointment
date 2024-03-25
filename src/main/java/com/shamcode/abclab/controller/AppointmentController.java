@@ -1,5 +1,8 @@
 package com.shamcode.abclab.controller;
 
+import com.shamcode.abclab.model.Appointment;
+import com.shamcode.abclab.service.AppointmentService;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,20 +10,17 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.shamcode.abclab.model.Appointment;
-import com.shamcode.abclab.service.AppointmentService;
-
+@WebServlet("/appointmentController")
 public class AppointmentController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
         AppointmentService appointmentService = AppointmentService.getAppointmentServiceInstance();
 
@@ -31,24 +31,20 @@ public class AppointmentController extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("type");
         AppointmentService appointmentService = AppointmentService.getAppointmentServiceInstance();
 
         if (type != null && type.equals("update")) {
             updateAppointment(request, response, appointmentService);
         } else if (type != null && type.equals("add")) {
-            addAppointment(request, response, appointmentService);
+            scheduleAppointment(request, response, appointmentService);
         } else if (type != null && type.equals("delete")) {
-            deleteAppointment(request, response, appointmentService);
+            cancelAppointment(request, response, appointmentService);
         }
     }
 
-    private void getAllAppointments(HttpServletRequest request, HttpServletResponse response,
-            AppointmentService service) throws ServletException, IOException {
-
+    private void getAllAppointments(HttpServletRequest request, HttpServletResponse response, AppointmentService service) throws ServletException, IOException {
         String message = "";
         List<Appointment> appointmentList;
 
@@ -56,7 +52,7 @@ public class AppointmentController extends HttpServlet {
             appointmentList = service.getAllAppointments();
         } catch (ClassNotFoundException | SQLException e) {
             message = e.getMessage();
-            appointmentList = new ArrayList<Appointment>();
+            appointmentList = new ArrayList<>();
         }
 
         request.setAttribute("message", message);
@@ -66,16 +62,22 @@ public class AppointmentController extends HttpServlet {
         rd.forward(request, response);
     }
 
-    private void getSpecificAppointment(HttpServletRequest request, HttpServletResponse response,
-            AppointmentService service) throws ServletException, IOException {
-
-        int appointmentID = Integer.parseInt(request.getParameter("appointmentID"));
+    private void getSpecificAppointment(HttpServletRequest request, HttpServletResponse response, AppointmentService service) throws ServletException, IOException {
+        String appointmentIdStr = request.getParameter("appointmentID");
+        int appointmentID;
         Appointment appointment;
         String message = "";
-        try {
-            appointment = service.getSpecificAppointment(appointmentID);
-        } catch (ClassNotFoundException | SQLException e) {
-            message = e.getMessage();
+
+        if (appointmentIdStr != null && !appointmentIdStr.isEmpty()) {
+            try {
+                appointmentID = Integer.parseInt(appointmentIdStr);
+                appointment = service.getSpecificAppointment(appointmentID);
+            } catch (NumberFormatException | ClassNotFoundException | SQLException e) {
+                message = e.getMessage();
+                appointment = new Appointment();
+            }
+        } else {
+            message = "Appointment ID is missing or invalid.";
             appointment = new Appointment();
         }
 
@@ -86,23 +88,25 @@ public class AppointmentController extends HttpServlet {
         rd.forward(request, response);
     }
 
-    private void updateAppointment(HttpServletRequest request, HttpServletResponse response,
-            AppointmentService service) throws ServletException, IOException {
-
+    private void updateAppointment(HttpServletRequest request, HttpServletResponse response, AppointmentService service) throws ServletException, IOException {
         int appointmentID = Integer.parseInt(request.getParameter("appointmentID"));
         String userName = request.getParameter("userName");
-        String appointmentDate = request.getParameter("appointmentDate");
+        String appointmentDateStr = request.getParameter("appointmentDate");
         String testName = request.getParameter("testName");
-        String doctorName = request.getParameter("doctorName");
         String appointmentRequest = request.getParameter("appointmentRequest");
 
-        Appointment appointment = new Appointment(appointmentID, userName , appointmentDate ,
-                testName,doctorName, appointmentRequest);
+        // Parsing appointmentDateStr to java.sql.Date
+        java.sql.Date appointmentDate = null;
+        if (appointmentDateStr != null && !appointmentDateStr.isEmpty()) {
+            appointmentDate = java.sql.Date.valueOf(appointmentDateStr);
+        }
+
+        Appointment appointment = new Appointment(appointmentID, userName, appointmentDate, testName, appointmentRequest);
 
         boolean result;
         String message = "";
         try {
-            result = service.editTheAppointment(appointment);
+            result = service.updateAppointmentDetails(appointment);
             if (result) {
                 message = "Appointment " + appointmentID + " has been successfully updated!";
             } else {
@@ -118,26 +122,28 @@ public class AppointmentController extends HttpServlet {
         rd.forward(request, response);
     }
 
-    private void addAppointment(HttpServletRequest request, HttpServletResponse response,
-            AppointmentService service) throws ServletException, IOException {
+    private void scheduleAppointment(HttpServletRequest request, HttpServletResponse response, AppointmentService service) throws ServletException, IOException {
+        String userName = request.getParameter("userName");
+        String appointmentDateStr = request.getParameter("appointmentDate");
+        String testName = request.getParameter("testName");
+        String appointmentRequest = request.getParameter("appointmentRequest");
 
-    	 String userName = request.getParameter("userName");
-         String appointmentDate = request.getParameter("appointmentDate");
-         String testName = request.getParameter("testName");
-         String doctorName = request.getParameter("doctorName");
-         String appointmentRequest = request.getParameter("appointmentRequest");
+        // Parsing appointmentDateStr to java.sql.Date
+        java.sql.Date appointmentDate = null;
+        if (appointmentDateStr != null && !appointmentDateStr.isEmpty()) {
+            appointmentDate = java.sql.Date.valueOf(appointmentDateStr);
+        }
 
-        Appointment appointment = new Appointment( userName , appointmentDate ,
-                testName,doctorName, appointmentRequest);
+        Appointment appointment = new Appointment(userName, appointmentDate, testName, appointmentRequest);
 
         boolean result;
         String message = "";
         try {
-            result = service.registerAppointment(appointment);
+            result = service.scheduleAppointment(appointment);
             if (result) {
-                message = "Appointment for UserName " + userName + " has been successfully added!";
+                message = "Appointment has been successfully scheduled!";
             } else {
-                message = "Failed to add the appointment!";
+                message = "Failed to schedule the appointment!";
             }
         } catch (ClassNotFoundException | SQLException e) {
             message = e.getMessage();
@@ -149,19 +155,17 @@ public class AppointmentController extends HttpServlet {
         rd.forward(request, response);
     }
 
-    private void deleteAppointment(HttpServletRequest request, HttpServletResponse response,
-            AppointmentService service) throws ServletException, IOException {
-
+    private void cancelAppointment(HttpServletRequest request, HttpServletResponse response, AppointmentService service) throws ServletException, IOException {
         int appointmentID = Integer.parseInt(request.getParameter("appointmentID"));
 
         boolean result;
         String message = "";
         try {
-            result = service.deleteTheAppointment(appointmentID);
+            result = service.cancelAppointment(appointmentID);
             if (result) {
-                message = "Appointment ID " + appointmentID + " has been successfully deleted!";
+                message = "Appointment with ID " + appointmentID + " has been successfully canceled!";
             } else {
-                message = "Failed to delete the appointment! Appointment ID: " + appointmentID;
+                message = "Failed to cancel the appointment! Appointment ID: " + appointmentID;
             }
         } catch (ClassNotFoundException | SQLException e) {
             message = e.getMessage();

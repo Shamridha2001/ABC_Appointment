@@ -23,15 +23,12 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="AdministratorLogin.jsp">Admin</a>
+          <a class="nav-link active" aria-current="page" href="Patientlogin.jsp">Patient Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="DoctorLogin.jsp">Doctor</a>
+          <a class="nav-link active" aria-current="page" href="Patientregister.jsp">Patient Register</a>
         </li>
         
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="TechnicianLogin.jsp">Technician</a>
-        </li>
       </ul>
       
     </div>

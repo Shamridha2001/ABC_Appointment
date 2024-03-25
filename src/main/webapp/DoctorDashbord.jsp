@@ -1,11 +1,10 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Patient Dshboard</title>
+<title>Doctor Dashboard</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <style>
@@ -29,12 +28,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="PAGE"></a>
-       
-        
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-appointment.jsp">Make Appointment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-payment.jsp">Make Payment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="TestResult.jsp">View Test Result</a>      
+        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="DoctorDashbord.jsp"></a>
+        <a class="nav-link mx-0 mx-md-3  fs-6" href="Home.jsp">Home</a>
+        <a class="nav-link mx-0 mx-md-3 fs-6" href="TestResult.jsp">Manage Testresult</a>
+                
       </div>
     </div>
   </div>
