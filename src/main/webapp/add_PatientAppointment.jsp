@@ -18,12 +18,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" href="AdministratorDashboard.jsp">Home</a>
-        <a class="nav-link  mx-0 mx-md-3 fw-bold fs-7 mt-3" aria-current="page" href="Test.jsp">Manage Test</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Technician.jsp">Manage Technician</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Doctor.jsp">Manage Doctor</a>
-        <a class="nav-link active mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Appointment.jsp">Manage Appointment</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Patient.jsp">Manage Patient</a>
+ <a class="nav-link active mx-0 mx-md-3  fw-bold fs-7 mt-3" href="PatientDashboard.jsp">Home</a>
                 
       </div>
     </div>
@@ -31,16 +26,16 @@
 </nav>
 
 <div class="container-fluid">
-       <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
-        <li class="nav-item">
-            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="Appointment.jsp">VIEW</a>
-        </li>
-        <li class="nav-item">
-            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="search-update-appointment.jsp">SEARCH & UPDATE </a>
-        </li>
-        <li class="nav-item">
-            <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link active" href="add-appointment.jsp">ADD</a>
-        </li>
+               <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
+  <li class="nav-item">
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link active" href="PatientAppointment">VIEW</a>
+  </li>
+  <li class="nav-item">
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="search_PatientAppointment.jsp">SEARCH & UPDATE </a>
+  </li>
+  <li class="nav-item">
+    <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link " href="add_PatientAppointment.jsp">ADD</a>
+  </li>
    </ul>
 		<br/>
 		<br/>
@@ -49,7 +44,7 @@
 		<div class="container">
 			  <h3> <center><b> SCHEDULE APPOINTMENT</b> </center></h3>
 			<br/>
-                <form method="post" action="appointmentController">
+                <form method="post" action="patientappointmentController">
                     <br/>
                     <label for="userName"><b>User Name:</b></label>
                     <input type="text" class="form-control mt-2" id="userName" name="userName"/>

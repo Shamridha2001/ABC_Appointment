@@ -18,12 +18,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" href="AdministratorDashboard.jsp">Home</a>
-        <a class="nav-link  mx-0 mx-md-3 fw-bold fs-7 mt-3" aria-current="page" href="Test.jsp">Manage Test</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Technician.jsp">Manage Technician</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Doctor.jsp">Manage Doctor</a>
-        <a class="nav-link active mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Appointment.jsp">Manage Appointment</a>
-        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Patient.jsp">Manage Patient</a>
+         <a class="nav-link active mx-0 mx-md-3  fw-bold fs-7 mt-3" href="PatientDashboard.jsp">Home</a>
                 
       </div>
     </div>
@@ -31,17 +26,16 @@
 </nav>
 
 <div class="container-fluid">
-       <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
-        <li class="nav-item">
-            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link active" href="Appointment">VIEW</a>
-        </li>
-        <li class="nav-item">
-            <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link" href="search-update-appointment.jsp">SEARCH & UPDATE </a>
-        </li>
-        <li class="nav-item">
-            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link" href="add-appointment.jsp">ADD</a>
-        </li>
-        <li class="nav-item"></li>
+               <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
+  <li class="nav-item">
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link active" href="PatientAppointment">VIEW</a>
+  </li>
+  <li class="nav-item">
+    <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link " href="search_PatientAppointment.jsp">SEARCH & UPDATE </a>
+  </li>
+  <li class="nav-item">
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="add_PatientAppointment.jsp">ADD</a>
+  </li>
     </ul>
     <br/>
         <br/>
@@ -49,7 +43,7 @@
     		<div class="container form-group p-5 mx-auto mb-2 bg-light border border-primary border-4" style="max-width: 800px;">
         <h3> <center>Search Appointment</center></h3>
         <br/>
-        <form method="get" action="appointmentController">
+        <form method="get" action="patientappointmentController">
             <div class="form-group">
                 Enter Appointment ID: <input type="text" name="appointmentID">
                 <input type="hidden" name="type" value="specific">
@@ -61,7 +55,7 @@
         <br/>
         <h3><center>Appointment</center></h3>
         <br/>
-        <form method="post" action="appointmentController">
+        <form method="post" action="patientappointmentController">
             <label for="appointmentID">Appointment ID:</label>
             <input type="text" readonly class="form-control" id="appointmentID" name="appointmentID" value="${not empty appointment ? appointment.appointmentID : ''}"/>
             <br/>

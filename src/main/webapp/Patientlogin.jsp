@@ -80,9 +80,9 @@
                 <label for="password" class="form-label"><b>Password</b></label>
                 <input name="password" type="password" class="form-control" id="password" placeholder="Enter your password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block register-button center" value="Login" onclick="return validateForm()">
+            <input type="submit" class="btn btn-primary btn-block register-button center" value="LOGIN" onclick="return validateForm()">
         </form>
-        <p class="text-center mt-3"><a href="Patientregister.jsp">Register</a></p>
+        <p class="text-center mt-3"><a href="Patientregister.jsp">REGISTER</a></p>
     </div>
 </div>
 

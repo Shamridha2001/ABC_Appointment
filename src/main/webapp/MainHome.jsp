@@ -10,27 +10,22 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-  <div class="container-fluid">
-      <img style="border-radius:50%;width: 100px;height: 100px;" alt="" src="img/logoabc.jpg">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
+  <div class="container-fluid" >
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
+    <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Patientlogin.jsp">Patient Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="Patientregister.jsp">Patient Register</a>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
+      <div class="navbar-nav" style="#ffff">
+        <a class="nav-link active mx-0 mx-md-3  fw-bold fs-7 mt-3" href="MainHome.jsp">Home</a>
+        <a class="nav-link  mx-0 mx-md-3 fw-bold fs-7 mt-3" aria-current="page" href="Patientlogin.jsp">Login</a>
         
-      </ul>
-      
+
+       
+                
+      </div>
     </div>
   </div>
 </nav>
@@ -50,14 +45,14 @@
       </div>
     </div>
     <div class="carousel-item" style="height: 450px">
-      <img src="img/home 2.jpg" class="d-block w-100" alt="..." style="height: 100%; object-fit:cover; filter: brightness(0.6);">
+      <img src="img/tec 1.jpeg" class="d-block w-100" alt="..." style="height: 100%; object-fit:cover; filter: brightness(0.6);">
       <div class="carousel-caption d-none d-md-block top-0 mt-4">
         <h5 class="display-1 fw-bolder text-capitalize">Your Health, Our Priority</h5>
         <p class="mt-5 fs-3 text-uppercase">Providing accurate and timely results</p>
       </div>
     </div>
     <div class="carousel-item" style="height: 450px">
-      <img src="img/home 2.jpg" class="d-block w-100" alt="..." style="height: 100%; object-fit:cover; filter: brightness(0.6);">
+      <img src="img/recep.jpg" class="d-block w-100" alt="..." style="height: 100%; object-fit:cover; filter: brightness(0.6);">
       <div class="carousel-caption d-none d-md-block top-0 mt-4">
         <h5 class="display-1 fw-bolder text-capitalize">Advanced Technology for Better Care</h5>
         <p class="mt-5 fs-3 text-uppercase">Empowering healthcare professionals with cutting-edge diagnostics</p>

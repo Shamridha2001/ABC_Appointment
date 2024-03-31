@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,22 +9,21 @@
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
   <div class="container-fluid" >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logo.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;">ABC LAB</p>
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link mx-0 mx-md-3  fs-6 " href="ReceptionistDashboard.jsp">Home</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="welcome.jsp">Manage Test</a>
-        <a class="nav-link active mx-0 mx-md-3 fs-6 font-weight-bold" aria-current="page" href="Technician.jsp">Manage Technician</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Doctor.jsp">Manage Doctor</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Appointment.jsp">Manage Appointment</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Patient.jsp">Manage Patient</a>
+        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" href="AdministratorDashboard.jsp">Home</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Test.jsp">Manage Test</a>
+        <a class="nav-link active mx-0 mx-md-3 fw-bold fs-7 mt-3" aria-current="page" href="Technician.jsp">Manage Technician</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Doctor.jsp">Manage Doctor</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Appointment.jsp">Manage Appointment</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Patient.jsp">Manage Patient</a>
                 
       </div>
     </div>
@@ -33,65 +31,49 @@
 </nav>
 
 
-
-    <div class="container-fluid">
-        <ul class="nav nav-tabs mt-2 px-4  bg-secondary pt-1">
-  <li class="nav-item">
-    <a class="bg-secondary text-white nav-link " href="Technician">Store</a>
-  </li>
-  <li class="nav-item">
-    <a class="bg-dark text-white nav-link active" href="search-update-technician.jsp">Search Specific & Update</a>
-  </li>
-  <li class="nav-item">
-    <a class="bg-secondary text-white nav-link " href="add-technician.jsp">Add</a>
-  </li>
-  <li class="nav-item">
-  </li>
-</ul>
+<div class="container-fluid">
+    <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
+        <li class="nav-item">
+            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link" href="Technician">VIEW</a>
+        </li>
+        <li class="nav-item">
+            <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link active" href="search-update-technician.jsp">SEARCH & UPDATE</a>
+        </li>
+        <li class="nav-item">
+            <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link" href="add-technician.jsp">ADD</a>
+        </li>
+    </ul>
+    <br/><br/>
+    <div class="container form-group p-5 mx-auto mb-2 bg-light border border-primary border-4" style="max-width: 800px;">
+        <h3><center><b> SEARCH TECHNICIAN</b></center></h3>
         <br/>
-        <br/>
-        
-        
-        
-        
-        
-         <div >
-        	<div class="form-group p-5 mx-5 bg-light">
-            <h3>Search Technician</h3>
-            <br/>
-            <form method="get" action="technicianController">
+        <form method="get" action="technicianController">
             <div class="form-group">
-    			<label for="exampleInputEmail1">Enter Technician ID:</label>
-    			<input type="text" name="technicianId" class="form-control mt-2" placeholder="Enter Technician ID:">
-    			<input type="hidden" name="type" value="specific">
-    			<button type="submit" class="btn btn-primary mt-4">Search</button>
-  			</div>
-                          
-            </form>
+                <b> Enter Technician ID:</b> <input type="text" name="technicianId" class="form-control" placeholder="Enter Technician ID">
+                <input type="hidden" name="type" value="specific">
+                <button type="submit" class="btn btn-primary fw-bold fs-7 mt-3">SEARCH</button>            
             </div>
-                        
+        </form>
+        <br/>
+        <p>${searchResult}</p>
+        <br/>
+        <h3><center><b> EDIT TECHNICIAN</b></center></h3>
+        <br/>
+        <form method="post" action="technicianController">
+            <label for="technicianId"><b>Technician ID:</b></label>
+            <input type="text" readonly class="form-control" id="technicianId" name="technicianId" value="${not empty technician ? technician.idTechnicians : ''}"/>
             <br/>
-            <p>${searchResult}</p>
+            <label for="technicianName"><b>Technician Name:</b></label>
+            <input type="text" class="form-control" id="technicianName" name="technicianName"  value="${not empty technician ? technician.name : ''}"/>
             <br/>
-                        
-            <div class="form-group p-5 mx-5 mb-4 bg-light">
-            <h3>Edit Technician</h3>
+            <label for="technicianSpecialization"><b>Specialization:</b></label>
+            <input type="text" class="form-control" id="technicianSpecialization" name="technicianSpecialization"  value="${not empty technician ? technician.specialization : ''}"/>
+            <input type="hidden" name="type" value="update"/>
             <br/>
-            <form method="post" action="technicianController">
-                <label for="technicianId">Technician ID:</label>
-                <input type="text"  class="form-control" id="technicianId" name="technicianId" value="${not empty technician ? technician.idTechnicians : ''}"/>
-                <br/>
-                <label for="technicianName">Technician Name:</label>
-                <input type="text" class="form-control" id="technicianName" name="technicianName"  value="${not empty technician ? technician.name : ''}"/>
-                <br/>
-                <label for="technicianSpecialization">Specialization:</label>
-                <input type="text" class="form-control" id="technicianSpecialization" name="technicianSpecialization"  value="${not empty technician ? technician.specialization : ''}"/>
-                <input type="hidden" name="type" value="update"/>
-                <br/>
-                <button type="submit" class="btn btn-warning">Update</button>            
-            </form>     
-        </div>      
-        </div>      
-    </div>
+            <button type="submit" class="btn btn-primary fw-bold fs-7">UPDATE</button>            
+        </form>     
+    </div>      
+</div>
+
 </body>
 </html>

@@ -77,6 +77,18 @@
 		<description></description>
 		<servlet-class>com.shamcode.abclab.controller.DoctorLoginController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ViewTestController</servlet-name>
+		<display-name>ViewTestController</display-name>
+		<description></description>
+		<servlet-class>com.shamcode.abclab.controller.ViewTestController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PatientAppointmentController</servlet-name>
+		<display-name>PatientAppointmentController</display-name>
+		<description></description>
+		<servlet-class>com.shamcode.abclab.controller.PatientAppointmentController</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>PatientLogController</servlet-name>
@@ -157,5 +169,13 @@
 		<servlet-mapping>
 		<servlet-name>DoctorLoginController</servlet-name>
 		<url-pattern>/DoctorLoginController</url-pattern>
-	</servlet-mapping>  
+	</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>ViewTestController</servlet-name>
+			<url-pattern>/ViewTestController</url-pattern>
+		</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>PatientAppointmentController</servlet-name>
+			<url-pattern>/PatientAppointment</url-pattern>
+		</servlet-mapping>  
 </web-app>

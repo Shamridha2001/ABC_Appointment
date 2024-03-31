@@ -10,21 +10,21 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
   <div class="container-fluid" >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logo.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;">ABC LAB</p>
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link mx-0 mx-md-3  fs-6" href="ReceptionistDashboard.jsp">Home</a>
-        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="welcome.jsp">Manage Test</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Technician.jsp">Manage Technician</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Doctor.jsp">Manage Doctor</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Appointment.jsp">Manage Appointment</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="Patient.jsp">Manage Patient</a>
+        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" href="AdministratorDashboard.jsp">Home</a>
+        <a class="nav-link active mx-0 mx-md-3 fw-bold fs-7 mt-3" aria-current="page" href="Test.jsp">Manage Test</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Technician.jsp">Manage Technician</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Doctor.jsp">Manage Doctor</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Appointment.jsp">Manage Appointment</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="Patient.jsp">Manage Patient</a>
                 
       </div>
     </div>
@@ -37,48 +37,48 @@
 
 
     <div class="container-fluid">
-         <ul class="nav nav-tabs mt-2 px-4  bg-secondary pt-1">
+         <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
   <li class="nav-item">
-    <a class="bg-dark text-white nav-link active" href="Test">Store</a>
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="Test">VIEW</a>
   </li>
   <li class="nav-item">
-    <a class="bg-secondary text-white nav-link " href="search-update-test.jsp">Search Specific & Update</a>
+    <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link active" href="search-update-test.jsp">SEARCH & UPDATE</a>
   </li>
   <li class="nav-item">
-    <a class="bg-secondary text-white nav-link " href="add-Test.jsp">Add</a>
+    <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="add-Test.jsp">ADD</a>
   </li>
   <li class="nav-item">
   </li>
 </ul>
         <br/>
         <br/>
-        <div class="container form-group p-5 mx-5 mb-4 bg-light">
-            <h3>Search Test-----------------</h3>
+        <div class="container form-group p-5 mx-auto mb-2 bg-light border border-primary border-4" style="max-width: 800px;">
+            <h3> <center><b> SEARCH TEST</b> </center></h3>
             <br/>
             <form method="get" action="testController">
             <div class="form-group">
-                Enter Test ID: <input type="text" name="testid">
+               <b> Enter Test ID:</b> <input type="text" name="testid">
                 <input type="hidden" name="type" value="specific">
-                <button type="submit" class="btn btn-info">Search</button>            
+                <button type="submit" class="btn btn-primary fw-bold fs-7">SEARCH TEST</button>            
             </form>
                         
             <br/>
             <p>${searchResult}</p>
             <br/>
-            <h3>Edit Test-----------------</h3>
+            <h3><center><b> EDIT</b> </center></h3>
             <br/>
             <form method="post" action="testController">
-                <label for="testid">Test ID:</label>
+                <label for="testid"><b>Test ID:</b></label>
                 <input type="text" readonly class="form-control" id="testid" name="testid" value="${not empty test ? test.testid : ''}"/>
                 <br/>
-                <label for="testName">Test Name:</label>
+                <label for="testName"><b>Test Name:</b></label>
                 <input type="text" class="form-control" id="testName" name="testName"  value="${not empty test ? test.name : ''}"/>
                 <br/>
-                <label for="testPrice">Price:</label>
+                <label for="testPrice"><b>Price:</b></label>
                 <input type="number" class="form-control" id="testPrice" name="testPrice"  value="${not empty test ? test.price : ''}"/>
                 <input type="hidden" name="type" value="update"/>
                 <br/>
-                <button type="submit" class="btn btn-warning">Update</button>            
+                <button type="submit" class="btn btn-primary fw-bold fs-7">UPDATE</button>            
             </form>     
         </div>      
     </div>

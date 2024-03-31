@@ -19,19 +19,19 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
   <div class="container-fluid" >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;"></p>
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="PAGE"></a>
-        <a class="nav-link mx-0 mx-md-3  fs-6" href="Home.jsp">Home</a>
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="TestResult.jsp">Manage Testresult</a>
-              
+        <a class="nav-link active mx-0 mx-md-3  fw-bold fs-7 mt-3" href="TechnicianDashboard.jsp">Home</a>
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="TestResult.jsp">Manage Test Result</a>
+       
+                
       </div>
     </div>
   </div>

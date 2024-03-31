@@ -144,7 +144,7 @@ public class PaymentController extends HttpServlet {
 
         request.setAttribute("message", message);
 
-        RequestDispatcher rd = request.getRequestDispatcher("add-payment.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("PatientDashboard.jsp");
         rd.forward(request, response);
     }
     private void getPaymentDetails(HttpServletRequest request, HttpServletResponse response, PaymentService service) throws ServletException, IOException {

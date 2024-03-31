@@ -13,11 +13,11 @@
 
 <style>
     body {
-      background-image: url('img/doc img.jpg'); /* Replace 'your-image.jpg' with the path to your background image */
-      background-size: cover; /* Ensure the image covers the entire background */
-      background-position: center; /* Center the background image */
-      background-repeat: no-repeat; /* Prevent the background image from repeating */
-      height: 100vh; /* Set the height to 100% of the viewport height */
+      background-image: url('img/doc img.jpg'); 
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+      height: 100vh; 
     }
   </style>
   
@@ -25,18 +25,18 @@
 <body>
 
 
-<nav class="navbar navbar-expand-lg navbar-light  " >
-  <div class="container-fluid " >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;"></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
+  <div class="container-fluid" >
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-              <a class="nav-link mx-0 mx-md-3 fs-6" href="H_home.jsp">Home</a>
-       
+        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" href="Home.jsp">Home</a>
         
+                
       </div>
     </div>
   </div>
@@ -54,19 +54,19 @@
   <div class="col-md-7    well" style="padding:0 0 0 50px ;">
   
   <div class="container mt-5 ">
-  <h2> Doctor Login </h2>
+  <h2> DOCTOR LOGIN </h2>
       <form id="loginForm" action="doctorLoginController" method="post">
   
     <div class="form-group mt-4">
-        <label for="username">Username:</label><br>
+        <label for="username"><b>Username:</b></label><br>
         <input type="text" id="username" class="form-control" name="username" required><br>
      </div>
     <div class="form-group mt-4">
-      <label for="pwd">Password:</label>
+      <label for="pwd"><b>Password:</b></label>
       <input type="password" id="password" class="form-control" name="password" required><br>
       
     </div>
-     <button type="submit" class="btn btn-secondary mb-5 mt-4">Login</button>
+     <button type="submit" class="btn btn-primary mb-5 mt-4">LOGIN >></button>
       </form>
   
 </div>

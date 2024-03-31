@@ -9,53 +9,47 @@
     <title>Search and Update Payment</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg navbar-light bg-info border border-primary " >
   <div class="container-fluid" >
-    <img style="border-radius:50%;width: 70px;height: 70px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
-    <p class="fw-bold fs-4 mt-3" style="color: red;"></p>
+    <img style="border-radius:50%;width: 100px;height: 100px; margin:0 10px 0 50px " alt="" src="img/logoabc.jpg">
+    <p class="fw-bold fs-4 mt-3" style="color: black;">ABC LAB</p>
     <button style="margin:0 30px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="margin:0 50px;">
       <div class="navbar-nav" style="#ffff">
-        <a class="nav-link active mx-0 mx-md-3 fs-6" aria-current="page" href="PAGE"></a>
-       
-        
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-appointment.jsp">Make Appointment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="add-payment.jsp">Make Payment</a>  
-        <a class="nav-link mx-0 mx-md-3 fs-6" href="TestResult.jsp">View Test Result</a>      
+        <a class="nav-link mx-0 mx-md-3  fw-bold fs-7 mt-3" aria-current="page" href="PAGE"></a> 
+        <a class="nav-link active mx-0 mx-md-3 fw-bold fs-7 mt-3" href="add-appointment.jsp">Make Appointment</a>  
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="add-payment.jsp">Make Payment</a>  
+        <a class="nav-link mx-0 mx-md-3 fw-bold fs-7 mt-3" href="TestResult.jsp">View Test Result</a>      
       </div>
     </div>
   </div>
 </nav>
     <div class="container-fluid">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs mt-4 px-10  bg-primary pt-10">
             <li class="nav-item">
-                <a class="nav-link" href="Payment">Store</a>
+                <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="Payment">VIEW</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Search Specific & Update</a>
+                <a class="bg-dark text-white fw-bold fs-7 mt-3 nav-link active " aria-current="page" href="#">SEARCH & UPDATE</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="add-payment.jsp">Add</a>
+                <a class="bg-primary text-white fw-bold fs-7 mt-3 nav-link " href="add-payment.jsp">ADD</a>
             </li>
         </ul>
          <br/>
         <br/>
-        <div class="form-group p-5 mx-5 mb-4 ">
- 		<div class=" p-5 mx-5">
- 		<div class=" p-5 mx-5 bg-info">
-        <div class="container ">
+        
         <div class="row">
-    		<div class="col-md-12 text-center">
-                        <h3 class="text-center">Search Payment</h3>
-                        </div>
-  		</div>
+    		<div class="container form-group p-5 mx-auto mb-2 bg-light border border-primary border-4" style="max-width: 800px;">
+               <h3><center>SEARCH PAYMENT</center></h3>
                         <br/>
                         <form method="get" action="paymentController">
+                        <div class="form-group">
                             Enter Payment ID: <input type="text" name="paymentId">
                             <input type="hidden" name="type" value="specific">
-                            <button type="submit" class="btn btn-info">Search</button>            
+                            <button type="submit" class="btn btn-primary">SEARCH</button>            
                         
         </form>
         <br/>
@@ -63,7 +57,7 @@
         <br/>
         
                         
-                        <h3 class="text-center">Edit Payment</h3>
+                        <h3><center>EDIT PAYMENT</center></h3>
                         <br/>
                         <form method="post" action="paymentController">
                             <label for="paymentId">Payment ID:</label>
@@ -91,7 +85,7 @@
                             <input type="number" class="form-control" id="cvcNo" name="cvcNo"  value="${not empty payment ? payment.cvcNo : ''}"/>
                             <input type="hidden" name="type" value="update"/>
                             <br/>
-                            <button type="submit" class="btn btn-warning">Update</button>            
+                            <button type="submit" class="btn btn-primary">UPDATE</button>            
                         </form>     
                     </div>
                 </div>
