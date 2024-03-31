@@ -17,7 +17,7 @@ class TechnicianTest {
     @Test
     void testTechnicianStringString() {
         Technician technician = new Technician("Jane Doe", "Lab Assistant");
-        assertEquals(0, technician.getIdTechnicians()); // ID defaults to 0
+        assertEquals(0, technician.getIdTechnicians()); 
         assertEquals("Jane Doe", technician.getName());
         assertEquals("Lab Assistant", technician.getSpecialization());
     }
@@ -25,9 +25,9 @@ class TechnicianTest {
     @Test
     void testTechnician() {
         Technician technician = new Technician();
-        assertEquals(0, technician.getIdTechnicians()); // ID defaults to 0
-        assertNull(technician.getName()); // Name defaults to null
-        assertNull(technician.getSpecialization()); // Specialization defaults to null
+        assertEquals(0, technician.getIdTechnicians()); 
+        assertNull(technician.getName()); 
+        assertNull(technician.getSpecialization()); 
     }
 
     @Test
